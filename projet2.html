@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2 - Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            position: relative;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo-container {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .logo-container img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.5;
+            text-indent: 1.25cm;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .image-container img {
+            max-width: 100%; /* Ajustement de la largeur maximale */
+            height: auto; /* Hauteur ajustée automatiquement */
+            display: block; /* Assurer que l'image est un élément de bloc */
+            margin: 0 auto; /* Centrer l'image horizontalement */
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul id="summary"></ul>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="projet1.html">Création d'un outil de veille concurentielle</a></li>
+            <li><a href="projet2.html">Création d’un outil décisionnelle</a></li>
+        </ul>
+        <div class="logo-container">
+            <img src="IUT_VANNES_LOGO-sansfondblanc-e1669819263791.png" alt="Logo 1">
+            <img src="But-SD-1024x392.png" alt="Logo 2">
+        </div>
+        
+    </nav>
+    <main>
+        <h1>Création d’un outil décisionnelle sur les prix de l’immobilier en Bretagne et en France</h1>
+        <h2>1 - Contexte et objectifs</h2>
+        <p>Dans le cadre du cours d’analyse et conception d’un outil décisionnelle nous devions mettre en place un système décisionnel permettant à des acteurs de la filière (agents immobiliers, des promoteurs immobiliers des responsables de l’urbanisme) d’analyser et de comprendre la situation et l’évolution du marché de l’immobilier et les enjeux économiques et sociétaux. </p>
+        <p>Le but de ce projet était de crée modèle relationnel permettant le calcul des indicateurs de supervision en fonction des axes d’analyses en optimisant les performances et le stockage, et d’intégrer différentes sources de données de manière automatique. </p>
+        <h2>2 - Présentations des données</h2>
+        <p>Pour ce projet nous avons accès a des données de la CEREMA, qui sont des données liées aux ventes immobilière. Les données sont à disposition sous forme d’un fichier Excel par département. Nous retrouvons donc des informations de localisation, de prix de vendre, de valeur foncière dans ces données. En parallèle de ces données nous devions les mettre en relations avec des indicateurs sociaux économique. Pour cela nous avons trouvée des données sur le site de l’INSEE ce qui nous a permis d’avoir pour chaque « code INSEE » des indicateurs sur les professions, des informations sur les habitants leurs tranche d’âges ou sur des catégories sociales professionnelles. </p>
+        <p>Après avoir cherché et sélectionnée nous données nous devions donc les liée, les nettoyer et crée de nouvelles variables.</p>
+        <h2>3 - Création des processus et script </h2>
+        <p>Pour la création de notre jeu de données nous avons utilisé Penthao en tant qu’ETL. </p>
+        <p>Nous nous sommes heurtés à un problème sur les données de la CEREMA, chaque fichier était lié à un seul département or notre but était de crée un outil sur toute la France. Nous avons donc choisi de crée un script python qui serait appeler dans Pentaho qui fusionnerais les fichiers pour n’en avoir qu’un seul en entrer de nos données. </p>
+        <p>Dans notre script Python on commence par définir le chemin vers le dossier ou sont placé tous les fichier Excel à empilé, ensuite on fait une boucle pour concaténer chacun de nos fichiers. </p>
+        <p>Une fois notre fichier concaténer, pour des raisons d’optimisation on à choisis de supprimé les variables non utiles pour ne pas avoir à les importer dans Pentaho. </p>
+        <p>Certaine des ventes présente dans le fichier concerne plusieurs propriétés et son donc sur plusieurs codes postaux. Nous avons donc également fait un traitement pour avoir une ligne égale à une transaction pour un biens en séparant tous les codes postaux. </p>
+        <p>Ce Scripte Python est appelé à chaque fois que l’ont lancé notre flux et s’exécute donc avant la jointure avec les données de l’INSEE. </p>
+        <h2>4 - Résultats</h2>
+        <p>A la fin de l’execution du flux nous avons donc un seul fichier avec tous les éléments dont nous avions besoins. Ce fichier à donc été intégrer à notre Power BI afin de réaliser quelques visualisations sur les données. </p>
+        <p>Nous avons donc réalisé ceci : </p>
+        <div class="image-container">
+            <img src="ExtraitPowerBI.png" alt="Description de l'image 1" width=1000px >
+        </div>
+        <p>Sur ces cartes on peut voir le prix moyen des bâtiments suivant les communes a gauche et le prix moyen des terrains à droite.</p>
+        <p>Dans notre visualisation nous avons ajouté des filtres, notamment pour choisir une période donnée dans le temps mais aussi pour filtrer le type de biens, uniquement les maison, les appartements ou les terrains par exemples. </p>
+        <p>Ce projet a donc mêlé plusieurs de nos compétences, python pour la partie automatisation des données, Pentaho pour les liens et la structure des données mais aussi Power Bi pour la visualisation des données.</p>      
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var summaryList = document.getElementById("summary");
+    
+            // Sélectionner tous les titres h2 dans le contenu principal
+            var headers = document.querySelectorAll("main h2");
+    
+            // Parcourir chaque titre h2
+            headers.forEach(function(header, index) {
+                // Créer un identifiant unique pour chaque titre h2
+                var id = "section" + (index + 1);
+                header.setAttribute("id", id);
+    
+                // Créer un lien dans le sommaire qui pointe vers ce titre h2
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.textContent = header.textContent;
+                a.setAttribute("href", "#" + id);
+                li.appendChild(a);
+                summaryList.appendChild(li);
+            });
+        });
+    </script>
+    
+</body>
+</html>
