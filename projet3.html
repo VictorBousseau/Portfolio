@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet IA - Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;  
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            position: relative;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo-container {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .logo-container img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.5;
+            text-indent: 1.25cm;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .image-container img {
+            max-width: 45%;
+            height: auto;
+        }
+        .single-image {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .single-image img {
+            max-width: 60%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul id="summary"></ul>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="projet1.html">Création d'un outil de veille concurentielle</a></li>
+            <li><a href="projet2.html">Création d’un outil décisionnelle</a></li>
+            <li><a href="projet3.html">Projet IA</a></li>
+        </ul>
+        <div class="logo-container">
+            <img src="IUT_VANNES_LOGO-sansfondblanc-e1669819263791.png" alt="Logo 1">
+            <img src="But-SD-1024x392.png" alt="Logo 2">
+        </div>
+    </nav>
+    <main>
+        <h1>Projet IA </h1>
+
+        <h2>1 - Contexte et demande </h2>
+        <p>
+            Dans le cadre des options choisies en deuxième année j’ai eu l’occasion d’effectuer un projet dans le cours d’intelligence artificielle. Le but de ce projet était de faire une synthèse de tous les algorithmes vus dans la formation et de les restituer en Python. L’objectif de ce projet était de créer une application dash ou streamlit à destination du mécanicien de la maintenance de bus qui devrait, en fonction des paramètres entrés, déterminer quelles sont les actions à réaliser pour la réparation.</p>
+        <p>Pour ce faire, il nous fallait donc des modèles d’apprentissage non supervisé pour pouvoir ressortir les réparations et une application qui prendrait en entrer nos variables explicatives et qui retournerait les actions à réaliser. </p>
+        <h2>2 - Présentations des données </h2>
+        <p>
+            Pour répondre à cette demande nous disposions de deux jeux de données, un historique de toutes les actions réalisées sur des bus (500 000 lignes). Ce jeu de données contenait des informations sur les signalements des conducteurs et les actions réaliées par la maintenance. </p>
+        <p>
+            Nous avions aussi à notre disposition des informations sur les bus, le type de moteur la marque ou le modèle que nous pouvions joindre à notre premier jeu de données. 
+        </p>
+       
+        <h2>3 - Création des algorithmes et de l'application </h2>
+        <p>
+            Pour répondre à cette demande nous avons donc choisi de réaliser plusieurs modèles comme : 
+        </p>
+        <ul>
+            <li>MLP</li>
+            <li>Arbres de décision</li>
+            <li>Random Forest</li>
+            <li>Classifieur Bayésien naïf</li>
+        </ul>
+
+
+        <p>
+            Nous avons donc créé tous ces modèles et recherché les meilleurs paramètres pour chacun d’entre eux afin d’ensuite les comparer et choisir le meilleur modèle pour chacune des variables à prédire.
+        </p>
+        <p>
+            Nous avions 4 variables à prédire, 3 localisations du problème, de plus en plus précis et un ordre de réparation et ciblerait vraiment le problème.         
+        </p>
+        <p>
+            Nous nous sommes vite rendu compte que les arbres de décision semblaient entre l’option la plus précise en se basant sur les accuracy, les matrices de confusion et le F1-Score.
+        </p>
+
+        <div class="single-image">
+            <img src="ExempledePrediction.png" alt="Description de l'image 3">
+        </div>
+        <p>Exemple de prédiction pour un individu</p>
+        <p>
+            En parallèle de la création de ces modèles nous avons créées une structure d’application sur Stream lit avec deux coté, le premier à gauche serait la saisie des données avec les variables explicatives dans des listes déroulante et la partie droite serait donc les prédictions de réparation. 
+        </p>
+
+
+        <h2>4 - Résultats</h2>
+        <p>
+            En parallèle de la création de ces modèles nous avons créées une structure d’application sur Stream lit avec deux coté, le premier à gauche serait la saisie des données avec les variables explicatives dans des listes déroulante et la partie droite serait donc les prédictions de réparation.         
+        </p>
+
+        <p>
+            Ce projet a été une conclusion à l’ensemble de nos cours sur l’intelligence artificielle et le machine Learning qui nous a permis de mettre en pratique tous nos acquis et sous une forme peu commune, une application python. 
+        </p>
+
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var summaryList = document.getElementById("summary");
+    
+            // Sélectionner tous les titres h2 dans le contenu principal
+            var headers = document.querySelectorAll("main h2");
+    
+            // Parcourir chaque titre h2
+            headers.forEach(function(header, index) {
+                // Créer un identifiant unique pour chaque titre h2
+                var id = "section" + (index + 1);
+                header.setAttribute("id", id);
+    
+                // Créer un lien dans le sommaire qui pointe vers ce titre h2
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.textContent = header.textContent;
+                a.setAttribute("href", "#" + id);
+                li.appendChild(a);
+                summaryList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

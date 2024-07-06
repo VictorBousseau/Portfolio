@@ -83,6 +83,7 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="projet1.html">Création d'un outil de veille concurentielle</a></li>
             <li><a href="projet2.html">Création d’un outil décisionnelle</a></li>
+            <li><a href="projet3.html">Projet IA</a></li>
         </ul>
         <div class="logo-container">
             <img src="IUT_VANNES_LOGO-sansfondblanc-e1669819263791.png" alt="Logo 1">
@@ -91,28 +92,28 @@
         
     </nav>
     <main>
-        <h1>Création d’un outil décisionnelle sur les prix de l’immobilier en Bretagne et en France</h1>
+        <h1>Création d’un outil décisionnel sur les prix de l’immobilier en Bretagne et en France</h1>
         <h2>1 - Contexte et objectifs</h2>
-        <p>Dans le cadre du cours d’analyse et conception d’un outil décisionnelle nous devions mettre en place un système décisionnel permettant à des acteurs de la filière (agents immobiliers, des promoteurs immobiliers des responsables de l’urbanisme) d’analyser et de comprendre la situation et l’évolution du marché de l’immobilier et les enjeux économiques et sociétaux. </p>
-        <p>Le but de ce projet était de crée modèle relationnel permettant le calcul des indicateurs de supervision en fonction des axes d’analyses en optimisant les performances et le stockage, et d’intégrer différentes sources de données de manière automatique. </p>
+        <p>Dans le cadre du cours d’analyse et conception d’un outil décisionnel nous devions mettre en place un système décisionnel permettant à des acteurs de la filière (agents immobiliers, des promoteurs immobiliers des responsables de l’urbanisme) d’analyser et de comprendre la situation et l’évolution du marché de l’immobilier et les enjeux économiques et sociétaux. </p>
+        <p>Le but de ce projet était de créer modèle relationnel permettant le calcul des indicateurs de supervision en fonction des axes d’analyses en optimisant les performances et le stockage, et d’intégrer différentes sources de données de manière automatique. </p>
         <h2>2 - Présentations des données</h2>
-        <p>Pour ce projet nous avons accès a des données de la CEREMA, qui sont des données liées aux ventes immobilière. Les données sont à disposition sous forme d’un fichier Excel par département. Nous retrouvons donc des informations de localisation, de prix de vendre, de valeur foncière dans ces données. En parallèle de ces données nous devions les mettre en relations avec des indicateurs sociaux économique. Pour cela nous avons trouvée des données sur le site de l’INSEE ce qui nous a permis d’avoir pour chaque « code INSEE » des indicateurs sur les professions, des informations sur les habitants leurs tranche d’âges ou sur des catégories sociales professionnelles. </p>
-        <p>Après avoir cherché et sélectionnée nous données nous devions donc les liée, les nettoyer et crée de nouvelles variables.</p>
+        <p>Pour ce projet nous avons accès à des données de la CEREMA, qui sont des données liées aux ventes immobilières. Les données sont à disposition sous forme d’un fichier Excel par département. Nous retrouvons donc des informations de localisation, de prix de vente, de valeur foncière dans ces données. En parallèle de ces données, nous devions les mettre en relations avec des indicateurs sociaux et économiques. Pour cela, nous avons trouvé des données sur le site de l’INSEE ce qui nous a permis d’avoir pour chaque « code INSEE » des indicateurs sur les professions, des informations sur les habitants, leur tranche d’âges ou sur des catégories sociales professionnelles. </p>
+        <p>Après avoir cherché et sélectionné nos données, nous devions donc les lier, les nettoyer et créer de nouvelles variables.</p>
         <h2>3 - Création des processus et script </h2>
         <p>Pour la création de notre jeu de données nous avons utilisé Penthao en tant qu’ETL. </p>
-        <p>Nous nous sommes heurtés à un problème sur les données de la CEREMA, chaque fichier était lié à un seul département or notre but était de crée un outil sur toute la France. Nous avons donc choisi de crée un script python qui serait appeler dans Pentaho qui fusionnerais les fichiers pour n’en avoir qu’un seul en entrer de nos données. </p>
-        <p>Dans notre script Python on commence par définir le chemin vers le dossier ou sont placé tous les fichier Excel à empilé, ensuite on fait une boucle pour concaténer chacun de nos fichiers. </p>
-        <p>Une fois notre fichier concaténer, pour des raisons d’optimisation on à choisis de supprimé les variables non utiles pour ne pas avoir à les importer dans Pentaho. </p>
-        <p>Certaine des ventes présente dans le fichier concerne plusieurs propriétés et son donc sur plusieurs codes postaux. Nous avons donc également fait un traitement pour avoir une ligne égale à une transaction pour un biens en séparant tous les codes postaux. </p>
-        <p>Ce Scripte Python est appelé à chaque fois que l’ont lancé notre flux et s’exécute donc avant la jointure avec les données de l’INSEE. </p>
+        <p>Nous nous sommes heurtés à un problème sur les données de la CEREMA, chaque fichier était lié à un seul département or notre but était de créer un outil pour toute la France. Nous avons donc choisi de créer un script Python qui serait appelé dans Pentaho qui fusionnerait les fichiers pour n’en avoir qu’un seul en entrer de nos données. </p>
+        <p>Dans notre script Python, on commence par définir le chemin vers le dossier où sont placés tous les fichiers Excel a empilé, ensuite on fait une boucle pour concaténer chacun de nos fichiers.  </p>
+        <p>Une fois notre fichier concaténé, pour des raisons d’optimisation, on a choisi de supprimer les variables non utiles pour ne pas avoir à les importer dans Pentaho. </p>
+        <p>Certaines des ventes présentes dans le fichier concernent plusieurs propriétés et sont donc sur plusieurs codes postaux. Nous avons donc également fait un traitement pour avoir une ligne égale à une transaction pour un bien en séparant tous les codes postaux. </p>
+        <p>Ce Script Python est appelé à chaque fois que l’on lance notre flux et s’exécute donc avant la jointure avec les données de l’INSEE. </p>
         <h2>4 - Résultats</h2>
-        <p>A la fin de l’execution du flux nous avons donc un seul fichier avec tous les éléments dont nous avions besoins. Ce fichier à donc été intégrer à notre Power BI afin de réaliser quelques visualisations sur les données. </p>
+        <p>A la fin de l’exécution du flux nous avons donc un seul fichier avec tous les éléments dont nous avions besoin. Ce fichier a donc été intégré à notre Power BI afin de réaliser quelques visualisations sur les données. </p>
         <p>Nous avons donc réalisé ceci : </p>
         <div class="image-container">
             <img src="ExtraitPowerBI.png" alt="Description de l'image 1" width=1000px >
         </div>
-        <p>Sur ces cartes on peut voir le prix moyen des bâtiments suivant les communes a gauche et le prix moyen des terrains à droite.</p>
-        <p>Dans notre visualisation nous avons ajouté des filtres, notamment pour choisir une période donnée dans le temps mais aussi pour filtrer le type de biens, uniquement les maison, les appartements ou les terrains par exemples. </p>
+        <p>Sur ces cartes on peut voir le prix moyen des bâtiments suivant les communes à gauche et le prix moyen des terrains à droite.</p>
+        <p>Dans notre visualisation nous avons ajouté des filtres, notamment pour choisir une période donnée dans le temps mais aussi pour filtrer le type de biens, uniquement les maisons, les appartements ou les terrains, par exemple. </p>
         <p>Ce projet a donc mêlé plusieurs de nos compétences, python pour la partie automatisation des données, Pentaho pour les liens et la structure des données mais aussi Power Bi pour la visualisation des données.</p>      
     </main>
     <script>

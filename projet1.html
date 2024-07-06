@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4;  
         }
         nav {
             background-color: #333;
@@ -89,6 +89,7 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="projet1.html">Création d'un outil de veille concurentielle</a></li>
             <li><a href="projet2.html">Création d’un outil décisionnelle</a></li>
+            <li><a href="projet3.html">Projet IA</a></li>
         </ul>
         <div class="logo-container">
             <img src="IUT_VANNES_LOGO-sansfondblanc-e1669819263791.png" alt="Logo 1">
@@ -100,44 +101,38 @@
 
         <h2>1 - Contexte et demande </h2>
         <p>
-            J’ai effectué mon stage de deuxième année au sein de l’ESSCA, une école de commerce postbac multi-campus en France et à l’étranger. 
-            Le recrutement étudiants postbac s’effectue sur Parcoursup.
-            Chaque année Parcoursup met à disposition des chiffres en opendata pour chacune des écoles présente sur la plateforme.
-            L’objectif de mon stage était donc de crée un outil de visualisation sur Power BI à partir de ces données afin de pouvoir placer l’ESSCA et ces différents
-            campus dans l’environnement concurrentielle, c’est-à-dire pouvoir comparer les chiffres des différentes formations avec l’ESSCA et comparer le niveau des étudiants, 
-            l’attractivité ou encore la sélectivité. Ce projet a été effectuer en collaboration avec la DSI (Direction des systèmes informatiques) et le service marketing. 
-        </p>
+            J’ai effectué mon stage de deuxième année au sein de l’ESSCA, une école de commerce post-bac multicampus en France et à l’étranger. 
+            Le recrutement des étudiants post-bac s’effectue sur Parcoursup.
+            Chaque année, Parcoursup met à disposition des chiffres en opendata pour chacune des écoles présentes sur la plateforme.
+            L’objectif de mon stage était donc de créer un outil de visualisation sur Power BI à partir de ces données afin de pouvoir placer l’ESSCA et ces différents.
+            campus dans l’environnement concurrentiel, c’est-à-dire pouvoir comparer les chiffres des différentes formations avec l’ESSCA et comparer le niveau des étudiants, 
+            l’attractivité ou encore la sélectivité. Ce projet a été effectué en collaboration avec la DSI (Direction des systèmes informatiques) et le service marketing. 
+             </p>
 
         <h2>2 - Présentations des données </h2>
         <p>
-            Pour crée cet outil je suis donc partie des données open data mise à disposition de Parcoursup avec un historique de 3 ans, 2022, 2021 et 2020. Ces données avaient préalablement été intégrer aux systèmes d’information par la DSI. J’avais donc une connexion à une base de données depuis mon Power BI. C’est donné était donc sous la forme d’un individu égale une formation et environ 130 variables parmi lesquelles des qualitatives comme la ville de la formation, l’établissement de la formation et des variables quantitatives comme le nombre de vœux pour la formation, le nombre de candidats admis (proposition d’admission à l’établissement accepter définitivement) ou encore des informations sur le nombre de candidats admis par mention.
-        </p>
+            Pour créer cet outil, je suis donc partie des données open data mises à disposition de Parcoursup avec un historique de 3 ans, 2022, 2021 et 2020. Ces données avaient préalablement été intégrées aux systèmes d’information par la DSI. J’avais donc une connexion à une base de données depuis mon Power BI. C’est donné était donc sous la forme d’un individu égale une formation et environ 130 variables parmi lesquelles des qualitatives comme la ville de la formation, l’établissement de la formation et des variables quantitatives comme le nombre de vœux pour la formation, le nombre de candidats admis (proposition d’admission à l’établissement accepté définitivement) ou encore des informations sur le nombre de candidats admis par mention.        </p>
         <p>
-            Pour compléter mon analyse j’ai travaillé avec les données de la CEFDG (Commission d’évaluation des formation et diplômes de gestions) qui est un organisme français accréditant les écoles de commerce. Chaque année, la CEFDG met à disposition des fiches sur chaque école de commerce avec des information sur le nombre d’étudiants, le nombre d’apprentis ou encore le nombre de professeurs.
-        </p>
+            Pour compléter mon analyse j’ai travaillé avec les données de la CEFDG (Commission d’évaluation des formations et diplômes de gestion) qui est un organisme français accréditant les écoles de commerce. Chaque année, la CEFDG met à disposition des fiches sur chaque école de commerce avec des informations sur le nombre d’étudiants, le nombre d’apprentis ou encore le nombre de professeurs.        </p>
         <p>
             Ces deux sources de données m’ont permis de crée un outil de visualisation complet répondant à la demande de placement dans l’environnement concurrentielle.
         </p>
 
         <h2>3 - Création technique de l’outil </h2>
         <p>
-            Pour crée cet outil je suis reparti du travailler précédent qu’avais entamer la DSI. Il ne s’agissait pas vraiment d’un travaille de visualisation des données mais plutôt de comparaison de chiffres brute. Le Power BI à mon arriver était constituer de deux colonnes qui représentais deux établissements ou nous pouvions faire nos filtres afin dans chacune des colonnes et ensuite comparer les chiffres.
-        </p>
+            Pour créer cet outil, je suis reparti du travail précédent qu’avait entamé la DSI. Il ne s’agissait pas vraiment d’un travail de visualisation des données, mais plutôt de comparaison de chiffres bruts. Le Power BI à mon arrivée était constitué de deux colonnes qui représentaient deux établissements où nous pouvions faire nos filtres afin dans chacune des colonnes et ensuite comparer les chiffres.        </p>
         <div class="image-container">
             <img src="AncienneOutil1.png" alt="Description de l'image 1">
             <img src="AncienneOutil2.png" alt="Description de l'image 2">
         </div>
         <p>
-            Je suis donc partie de ce premier travaille et j’ai essayer de le transformer en visualisation user frendly. J’ai donc gardé tous les travaillent existant qui pourrais orienter mes visualisations et les indicateurs à afficher. Tous au long de ce projet j’ai donc travaillé avec la DSI pour des questions technique et de définition mais aussi avec le marketing pour des questions métier et de validation des visuels. Nous avions donc des réunions hebdomadaires tripartite afin d’avancer au mieux sur ce projet. 
-        </p>
+            Je suis donc partie de ce premier travail et j’ai essayé de le transformer en visualisation user frendly. J’ai donc gardé tous les travaux existants qui pourraient orienter mes visualisations et les indicateurs à afficher. Tout au long de ce projet j’ai donc travaillé avec la DSI pour des questions techniques et de définition, mais aussi avec le marketing pour des questions métier et de validation des visuels. Nous avions donc des réunions hebdomadaires tripartites afin d’avancer au mieux sur ce projet.         </p>
         <p>
-            Dans ce projet j’ai principalement réalisé des mesures DAX afin que l’entièreté du rapport soit dynamique et réagisse aux filtres. J’ai aussi utilisé Power Query pour crée de nouvelles variables ou faire des petites interactions avec la base. Pour les grosses intégrations et les changements majeurs je demandais aux data manager de directement agir sur la base. J’ai aussi effectué un travail d’harmonisations des données entre les données Open Data de Parcoursup et les données de la CEFDG afin de les liés au mieux pour une interaction optimal. 
-        </p>
+            Dans ce projet j’ai principalement réalisé des mesures DAX afin que l’entièreté du rapport soit dynamique et réagisse aux filtres. J’ai aussi utilisé Power Query pour créer de nouvelles variables ou faire des petites interactions avec la base. Pour les grosses intégrations et les changements majeurs je demandais aux data manager de directement agir sur la base. J’ai aussi effectué un travail d’harmonisation des données entre les données Open Data de Parcoursup et les données de la CEFDG afin de les liés au mieux pour une interaction optimale.         </p>
 
         <h2>4 - Résultats</h2>
         <p>
-            À la fin de mon stage, ce projet permettait de visualiser les données pour 4 grands types d’école et de les comparer entre elles, les écoles de commerce qui était l’objectif initial, les écoles d’ingénieurs, les classes préparatoires aux grandes écoles et les instituts universitaires de technologie. Ces résultats ont été présenter au comité exécutif de l’ESSCA et cet outil est régulièrement utiliser pour faire de la veille concurrentielle. Une mise à jour de cet outil est prévue deux fois par ans, en septembre à la sortie des fiches de la CEFDG et en février à la sortie des données open data de Parcoursup.
-        </p>
+            À la fin de mon stage, ce projet permettait de visualiser les données pour 4 grands types d’école et de les comparer, les écoles de commerce qui était l’objectif initial, les écoles d’ingénieurs, les classes préparatoires aux grandes écoles et les instituts universitaires de technologie. Ces résultats ont été présentés au comité exécutif de l’ESSCA et cet outil est régulièrement utilisé pour faire de la veille concurrentielle. Une mise à jour de cet outil est prévue deux fois par an, en septembre à la sortie des fiches de la CEFDG et en février à la sortie des données open data de Parcoursup.        </p>
         <div class="single-image">
             <img src="OVCRésultat.png" alt="Description de l'image 3">
         </div>
